@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProyectoDos.css";
 import Button from '@mui/material/Button'
 
 export const ProyectoDos = () => {
-  const ref = useRef(null);
+ 
 
   const [valores, setValores] = useState([])
   const [texto, setTexto] = useState([]);
@@ -22,19 +22,20 @@ export const ProyectoDos = () => {
   }
 
   function guardarTexto(event) {
-    console.log(ref.current.value)  
-    setValores([...valores, ref.current.value])
+
+    setValores([...valores, texto])
+    setTexto("")
   }
 
   return (
     <>
-      <h1>BIENVENIDO A NUESTRO PRIMER USEEFFECT</h1>
+      <h1>OBTENER DATOS DE LA CAJA DE TEXTO😎</h1>
       <textarea        
         value={texto}
         onChange={obtenerTexto}
         cols="50"
         rows="5"
-        ref={ref}
+        placeholder="ESCRIBA ALGO..." 
       />
 
       <div>
@@ -42,8 +43,8 @@ export const ProyectoDos = () => {
           ENVIAR MENSAJE
         </Button>
         <h2>Contador de caracteres: {texto.length}</h2>     
-        {valores.map((item) => (
-          <h3 key={item}>{item}</h3>
+        {valores.map((item) => (         
+          <h3 key={valores.indexOf(item)}>{item}</h3>   //valores.indexOf(item) obtiene la posición del array      
         ))}
       </div>
     </>
