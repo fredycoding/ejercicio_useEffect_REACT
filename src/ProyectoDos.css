@@ -16,7 +16,10 @@ textarea{
    border-radius: var(--button_radius);
    background: var(--button_outline_color);
   }
-  
+  .textarea{
+    border-radius: 20px;
+    padding: 15px;
+  }
 
   
   .btn:hover .button_top {
@@ -27,4 +30,9 @@ textarea{
   .btn:active .button_top {
     /* Push the button downwards when pressed */
    transform: translateY(0);
+  }
+  .contenedor{
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
