@@ -37,23 +37,12 @@ export const ProyectoDos = () => {
         placeholder="ESCRIBA ALGO..."
         className="textarea"
       />
-
       <div>
-        <Button
-          variant="contained"
-          onClick={guardarTexto}
-          disabled={activar}
-          sx={{ mt: 2 }}
-        >
+        <Button variant="contained" onClick={guardarTexto} disabled={activar} sx={{ mt: 2 }}>
           ENVIAR MENSAJE
         </Button>
-        <Button
-          variant="outlined"
-          onClick={() => setValores([])}
-          color="error"
-          sx={{ ml: 2, mt: 2 }}
-        >
-          {/*Limpio el array*/}
+        {/*Limpio el array en setValores*/}
+        <Button variant="outlined" onClick={() => setValores([])} color="error" sx={{ ml: 2, mt: 2 }}>          
           LIMPIAR DATOS
         </Button>
         <h2>Contador de caracteres: {texto.length}</h2>
